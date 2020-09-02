@@ -1,6 +1,6 @@
 cabal-version:       2.4
 
-name:                cube
+name:                haskell-cube
 version:             0.1.0.0
 license:             AGPL-3.0-only
 license-file:        LICENSE
@@ -26,7 +26,7 @@ executable cube
   import:              basic
   hs-source-dirs:      app
   main-is:             Main.hs
-  build-depends:       cube
+  build-depends:       haskell-cube
 
 test-suite cube-test
   import:              basic
@@ -34,7 +34,7 @@ test-suite cube-test
   type:                exitcode-stdio-1.0
   main-is:             Main.hs
   Other-modules:       Test.Cube
-  build-depends:       cube
+  build-depends:       haskell-cube
                      , hedgehog
                      , tasty
                      , tasty-hedgehog
