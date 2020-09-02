@@ -1,0 +1,8 @@
+cradle:
+  cabal:
+    - path: "./app"
+      component: "exe:cube"
+    - path: "./src"
+      component: "lib:cube"
+    - path: "./test"
+      component: "test:cube-test"

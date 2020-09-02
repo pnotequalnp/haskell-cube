@@ -1,0 +1,41 @@
+cabal-version:       2.4
+
+name:                cube
+version:             0.1.0.0
+license:             AGPL-3.0-only
+license-file:        LICENSE
+author:              Kevin Mullins
+
+common basic
+  default-language:    Haskell2010
+  build-depends:       base ^>=4.13.0.0
+  default-extensions:  NoStarIsType
+  ghc-options:         -Wall
+                       -fdefer-type-errors
+
+library
+  import:              basic
+  hs-source-dirs:      src
+  exposed-modules:     Cube.Facelet
+                     , Cube.Facelet.Internal
+                     , Cube
+  build-depends:       vector
+                     , array
+
+executable cube
+  import:              basic
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  build-depends:       cube
+
+test-suite cube-test
+  import:              basic
+  hs-source-dirs:      test
+  type:                exitcode-stdio-1.0
+  main-is:             Main.hs
+  Other-modules:       Test.Cube
+  build-depends:       cube
+                     , hedgehog
+                     , tasty
+                     , tasty-hedgehog
+                     , tasty-hunit
