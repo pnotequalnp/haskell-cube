@@ -3,6 +3,6 @@ cradle:
     - path: "./app"
       component: "exe:cube"
     - path: "./src"
-      component: "lib:cube"
+      component: "lib:haskell-cube"
     - path: "./test"
       component: "test:cube-test"
